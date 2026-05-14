@@ -1,0 +1,54 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  chapter: string;
+  description?: string;
+  heroImage?: string;
+  heroAlt?: string;
+  pubDate?: string;
+  readingTime?: string;
+}
+
+const { title, chapter, description, heroImage, heroAlt = '', pubDate, readingTime } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  {heroImage && (
+    <div class="article-hero">
+      <img src={heroImage} alt={heroAlt} />
+      <div class="article-hero__overlay"></div>
+      <div class="article-hero__text">
+        <div class="article-hero__chapter">{chapter}</div>
+        <h1 class="article-hero__title">{title}</h1>
+      </div>
+    </div>
+  )}
+
+  <div class="article-meta">
+    <span class="article-meta__chapter">{chapter}</span>
+    {pubDate && <span>{pubDate}</span>}
+    {readingTime && <span>読了 {readingTime}</span>}
+  </div>
+
+  {!heroImage && (
+    <div class="prose" style="padding-top: 16px;">
+      <div style="font-size:.75rem;letter-spacing:.2em;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:16px;">{chapter}</div>
+      <h1>{title}</h1>
+    </div>
+  )}
+
+  <article class="prose">
+    <slot />
+  </article>
+
+  <div class="cta-section">
+    <div class="cta-section__eyebrow">無料相談受付中</div>
+    <h2 class="cta-section__title">今すぐ人生を変える第一歩を</h2>
+    <p class="cta-section__sub">桐島への感想・個別相談の申し込みは公式LINEから。限定特典もあり。</p>
+    <a href="https://lin.ee/9hTYDII" target="_blank" rel="noopener" class="cta-btn">
+      <svg width="22" height="22" viewBox="0 0 48 48" fill="currentColor"><path d="M24 4C12.95 4 4 12.4 4 22.8c0 9.3 7.4 17.1 17.4 18.6l1.5.3v6.8l6.2-3.4c1-.5 2.1-.8 3.2-.9H33c10.6 0 15-6.8 15-13.4C48 12.4 35.05 4 24 4z"/></svg>
+      公式LINEで無料相談する
+    </a>
+  </div>
+</BaseLayout>

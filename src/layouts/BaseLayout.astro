@@ -1,0 +1,534 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+const { title, description = 'モテ男育成塾 – 非モテから下克上した桐島の記録', ogImage } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | モテ男育成塾</title>
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style is:global>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --bg-card:   #111111;
+      --bg-hover:  #161616;
+      --border:    #222222;
+      --text:      #e8e0d8;
+      --text-muted:#888880;
+      --accent:    #c8102e;
+      --accent-dim:#8b0b20;
+      --gold:      #b8912a;
+      --gold-light:#d4a83a;
+      --serif:     'Noto Serif JP', serif;
+      --sans:      'Noto Sans JP', sans-serif;
+      --max-w:     720px;
+      --max-w-wide:1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 18px;
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header__inner {
+      max-width: var(--max-w-wide);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-logo {
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: .06em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .site-logo::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .site-nav {
+      display: flex;
+      gap: 28px;
+      font-size: .85rem;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+    }
+    .site-nav a:hover { color: var(--text); }
+
+    /* ── MAIN ── */
+    main { min-height: 80vh; }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 24px;
+      text-align: center;
+      font-size: .8rem;
+      color: var(--text-muted);
+      letter-spacing: .06em;
+    }
+
+    /* ── CTA BUTTON ── */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #06c755;
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .05em;
+      padding: 18px 36px;
+      border-radius: 6px;
+      transition: opacity .2s, transform .2s;
+    }
+    .cta-btn:hover { opacity: .88; transform: translateY(-2px); }
+
+    /* ── ARTICLE CARD ── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+    .card:hover {
+      background: var(--bg-hover);
+      border-color: #333;
+      transform: translateY(-3px);
+    }
+    .card__img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+    .card__body { padding: 24px 28px 28px; }
+    .card__tag {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .card__title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .card__excerpt {
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card__meta {
+      margin-top: 20px;
+      font-size: .75rem;
+      color: var(--text-muted);
+      letter-spacing: .06em;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .card__meta::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── PROSE (記事本文) ── */
+    .prose {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      line-height: 2.05;
+      color: var(--text);
+    }
+
+    .prose h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.35;
+      letter-spacing: -.01em;
+      margin-bottom: 32px;
+      color: #fff;
+    }
+    .prose h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-top: 72px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      color: #fff;
+    }
+    .prose h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .prose p {
+      margin-bottom: 28px;
+    }
+    .prose p + p { margin-top: -4px; }
+
+    .prose strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .prose blockquote {
+      margin: 40px 0;
+      padding: 24px 32px;
+      border-left: 4px solid var(--accent);
+      background: #13080a;
+      border-radius: 0 4px 4px 0;
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: #ddd;
+    }
+
+    .prose img {
+      width: 100%;
+      border-radius: 6px;
+      margin: 40px 0;
+    }
+    .prose .img-wide {
+      width: calc(100% + 48px);
+      margin-left: -24px;
+      margin-right: -24px;
+      border-radius: 0;
+      max-width: none;
+    }
+    .prose figure {
+      margin: 40px 0;
+    }
+    .prose figcaption {
+      text-align: center;
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      letter-spacing: .06em;
+    }
+
+    /* ドラマチックなセパレーター */
+    .prose hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+      margin: 64px 0;
+    }
+
+    /* インパクト数字 */
+    .stat-block {
+      background: #0f0f0f;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 4px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .stat-block .num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .stat-block .label {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      letter-spacing: .06em;
+    }
+
+    /* 吹き出し風セリフ */
+    .dialogue {
+      background: #0d0d0d;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-style: italic;
+      color: #ccc;
+      position: relative;
+    }
+    .dialogue::before {
+      content: '「';
+      font-family: var(--serif);
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: .3;
+      position: absolute;
+      top: 8px;
+      left: 12px;
+    }
+
+    /* ── HERO ── */
+    .article-hero {
+      position: relative;
+      width: 100%;
+      max-height: 520px;
+      overflow: hidden;
+    }
+    .article-hero img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(.55);
+    }
+    .article-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(10,10,10,.95) 100%);
+    }
+    .article-hero__text {
+      position: absolute;
+      bottom: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: var(--max-w);
+      padding: 0 24px;
+    }
+    .article-hero__chapter {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .article-hero__title {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.35;
+      color: #fff;
+      text-shadow: 0 2px 20px rgba(0,0,0,.8);
+    }
+
+    /* ── INDEX HERO ── */
+    .index-hero {
+      padding: 80px 24px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at 50% 0%, #1a0305 0%, var(--bg) 70%);
+    }
+    .index-hero__eyebrow {
+      font-size: .78rem;
+      letter-spacing: .25em;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .index-hero__title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .index-hero__sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ── ARTICLE LIST ── */
+    .articles-section {
+      max-width: var(--max-w-wide);
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .articles-section__label {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    /* featured */
+    .article-grid .card:first-child {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .article-grid .card:first-child .card__img {
+      aspect-ratio: auto;
+      height: 100%;
+    }
+    @media (max-width: 680px) {
+      .article-grid .card:first-child {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── CTA SECTION (記事末尾) ── */
+    .cta-section {
+      background: #0d0005;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px;
+      text-align: center;
+      margin-top: 80px;
+    }
+    .cta-section__eyebrow {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .cta-section__title {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .cta-section__sub {
+      color: var(--text-muted);
+      font-size: .9rem;
+      margin-bottom: 32px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    /* ── 記事ページ meta ── */
+    .article-meta {
+      max-width: var(--max-w);
+      margin: 0 auto 48px;
+      padding: 32px 24px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: .8rem;
+      color: var(--text-muted);
+      letter-spacing: .06em;
+    }
+    .article-meta__chapter {
+      background: var(--accent);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 3px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    /* ── About / Contact ── */
+    .page-content {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .page-title {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 48px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .site-nav { gap: 16px; font-size: .8rem; }
+      .prose h2 { font-size: 1.35rem; }
+      .stat-block .num { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/" class="site-logo">モテ男育成塾</a>
+      <nav class="site-nav">
+        <a href="/">記事</a>
+        <a href="/about">About</a>
+        <a href="/contact">公式LINE</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2024 モテ男育成塾 – All rights reserved.</p>
+  </footer>
+</body>
+</html>
