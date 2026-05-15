@@ -503,11 +503,363 @@ const { title, description = 'モテ男育成塾 – 非モテから下克上し
       border-bottom: 1px solid var(--border);
     }
 
+    /* ── LP HERO ── */
+    .lp-hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .lp-hero__bg {
+      position: absolute;
+      inset: 0;
+    }
+    .lp-hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(.4);
+    }
+    .lp-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,.3) 0%, rgba(10,10,10,.7) 100%);
+    }
+    .lp-hero__content {
+      position: relative;
+      text-align: center;
+      padding: 0 24px;
+      max-width: 700px;
+      width: 100%;
+    }
+    .lp-eyebrow {
+      font-size: .75rem;
+      letter-spacing: .28em;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .lp-hero__title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 6vw, 3.4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 24px rgba(0,0,0,.8);
+    }
+    .lp-hero__sub {
+      font-size: clamp(.9rem, 2.5vw, 1.1rem);
+      color: rgba(255,255,255,.75);
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+    .lp-scroll-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.4);
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: .88rem;
+      letter-spacing: .1em;
+      transition: background .2s, border-color .2s;
+    }
+    .lp-scroll-btn:hover {
+      background: rgba(255,255,255,.1);
+      border-color: rgba(255,255,255,.7);
+    }
+
+    /* ── CHAPTER NAV ── */
+    .chapter-nav {
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+      background: rgba(10,10,10,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .chapter-nav a {
+      padding: 14px 16px;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      white-space: nowrap;
+      transition: color .2s;
+      border-bottom: 2px solid transparent;
+    }
+    .chapter-nav a:hover {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── CHAPTER SECTION ── */
+    .chapter {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .chapter--alt {
+      background: #0d0d0d;
+    }
+    .chapter-header {
+      max-width: 720px;
+      margin: 0 auto 56px;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .chapter-label {
+      display: inline-block;
+      font-size: .72rem;
+      letter-spacing: .25em;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding: 4px 14px;
+      border: 1px solid var(--accent-dim);
+      border-radius: 100px;
+    }
+    .chapter-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .prose h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: #fff;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent);
+    }
+
+    /* ── 特典セクション ── */
+    .tokuten-section {
+      background: #06000d;
+      padding: 80px 24px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .tokuten-section::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(184,145,42,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .tokuten-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .tokuten-eyebrow {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .tokuten-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .tokuten-sub {
+      color: var(--text-muted);
+      font-size: .95rem;
+      line-height: 1.9;
+      margin-bottom: 48px;
+    }
+    .tokuten-block {
+      background: #0d0a00;
+      border: 1px solid #2a2000;
+      border-radius: 8px;
+      padding: 28px 20px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .tokuten-block--featured {
+      background: #0a0800;
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 40px rgba(184,145,42,.15);
+      padding: 32px 24px;
+      margin-bottom: 32px;
+    }
+    .tokuten-block__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .tokuten-block__num {
+      flex-shrink: 0;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      color: var(--text-muted);
+      font-weight: 700;
+      background: #1a1a1a;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .tokuten-block__num--gold {
+      color: var(--gold);
+      background: rgba(184,145,42,.12);
+    }
+    .tokuten-block__title {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.5;
+    }
+    .tokuten-block__body {
+      font-size: .9rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+    .tokuten-list {
+      list-style: none;
+      margin: 24px 0 20px;
+    }
+    .tokuten-list li {
+      padding: 12px 0 12px 24px;
+      border-bottom: 1px solid #1a1400;
+      font-size: .92rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      position: relative;
+    }
+    .tokuten-list li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: .7rem;
+      top: 15px;
+    }
+    .tokuten-list li strong { color: var(--gold-light); font-weight: 700; }
+    .tokuten-emphasis {
+      background: rgba(200,16,46,.08);
+      border: 1px solid rgba(200,16,46,.25);
+      border-radius: 6px;
+      padding: 16px 20px;
+      font-size: .92rem;
+      color: #ccc;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .tokuten-emphasis strong { color: #fff; font-weight: 700; }
+    .tokuten-cta { text-align: center; }
+    .tokuten-cta__method {
+      margin-bottom: 24px;
+      color: var(--text-muted);
+      font-size: .88rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tokuten-cta__step {
+      background: var(--gold);
+      color: #000;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: .06em;
+      flex-shrink: 0;
+    }
+    .cta-btn--xl {
+      font-size: 1.05rem;
+      padding: 20px 32px;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(6,199,85,.3);
+      width: 100%;
+      max-width: 420px;
+      justify-content: center;
+    }
+    .tokuten-cta__arrow {
+      margin-top: 14px;
+      font-size: .85rem;
+      color: var(--gold);
+      letter-spacing: .08em;
+      font-weight: 700;
+    }
+    .tokuten-cta__small {
+      margin-top: 12px;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+    .tokuten-video-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 20px 0 28px;
+    }
+    .tokuten-video-img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #2a2000;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+    }
+    .tokuten-video-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .badge-time {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .badge-label {
+      font-size: .75rem;
+      color: rgba(255,255,255,.85);
+    }
+
+    html, body { overflow-x: hidden; }
+
     @media (max-width: 640px) {
       body { font-size: 16px; }
       .site-nav { gap: 16px; font-size: .8rem; }
       .prose h2 { font-size: 1.35rem; }
-      .stat-block .num { font-size: 2.2rem; }
+      .stat-block .num { font-size: 1.6rem; word-break: break-all; }
+      .chapter { padding: 60px 0; }
+      .tokuten-block { padding: 20px 16px; }
+      .tokuten-block--featured { padding: 24px 16px; }
+      .cta-btn--xl { font-size: .95rem; padding: 18px 20px; }
     }
   </style>
 </head>
