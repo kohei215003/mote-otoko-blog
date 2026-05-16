@@ -1,0 +1,602 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="期間限定公開 ── モテ男育成塾" description="借金200万・童貞・極貧。どん底から這い上がった男の全記録。期間限定公開。">
+
+<!-- ========== COUNTDOWN BAR ========== -->
+<div class="cd-bar" id="cdBar">
+  <div class="cd-bar__label">この記事の公開期限</div>
+  <div class="cd-bar__timer" id="cdTimer">
+    <span class="cd-unit"><span class="cd-num" id="cdD">--</span><span class="cd-unit-label">日</span></span>
+    <span class="cd-sep">:</span>
+    <span class="cd-unit"><span class="cd-num" id="cdH">--</span><span class="cd-unit-label">時間</span></span>
+    <span class="cd-sep">:</span>
+    <span class="cd-unit"><span class="cd-num" id="cdM">--</span><span class="cd-unit-label">分</span></span>
+    <span class="cd-sep">:</span>
+    <span class="cd-unit"><span class="cd-num" id="cdS">--</span><span class="cd-unit-label">秒</span></span>
+  </div>
+  <div class="cd-bar__sub">期限を過ぎると閲覧できなくなります</div>
+</div>
+
+<!-- ========== EXPIRED OVERLAY ========== -->
+<div class="expired-overlay" id="expiredOverlay" style="display:none;">
+  <div class="expired-box">
+    <div class="expired-icon">🔒</div>
+    <h2 class="expired-title">公開期限が終了しました</h2>
+    <p class="expired-body">この記事の閲覧期限（5日間）が過ぎました。<br />引き続き桐島の情報を受け取りたい方は<br />公式LINEをご確認ください。</p>
+    <a href="https://lin.ee/9hTYDII" target="_blank" rel="noopener" class="cta-btn" style="margin-top:28px;">
+      <svg width="22" height="22" viewBox="0 0 48 48" fill="currentColor"><path d="M24 4C12.95 4 4 12.4 4 22.8c0 9.3 7.4 17.1 17.4 18.6l1.5.3v6.8l6.2-3.4c1-.5 2.1-.8 3.2-.9H33c10.6 0 15-6.8 15-13.4C48 12.4 35.05 4 24 4z"/></svg>
+      公式LINEを見る
+    </a>
+  </div>
+</div>
+
+<!-- ========== MAIN CONTENT ========== -->
+<div id="mainContent">
+
+  <!-- HERO -->
+  <section class="lp-hero">
+    <div class="lp-hero__bg">
+      <img src="/images/p008_img01.jpg" alt="桐島" />
+      <div class="lp-hero__overlay"></div>
+    </div>
+    <div class="lp-hero__content">
+      <p class="lp-eyebrow">期間限定公開</p>
+      <h1 class="lp-hero__title">借金200万・童貞・極貧。<br /><span style="color:var(--gold-light);">どん底の男が全てを手に入れるまで。</span></h1>
+      <p class="lp-hero__sub">この記事は<strong style="color:#fff;">5日間限定</strong>で公開されています。<br />今すぐ読まないと、二度と読めません。</p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="#article" class="lp-scroll-btn">
+          記事を読む
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="lp-intro">
+    <div class="lp-intro__inner">
+      <p class="lp-intro__catch">あなたは今、<strong>とんでもないものを手にしようとしている。</strong></p>
+      <p class="lp-intro__body">このページには、桐島が4年以上かけて積み上げた「全記録」へのリンクと、感想を送った人だけが受け取れる「限定特典」の情報が載っています。<br /><br />読むだけでモテも金も変わる。大げさじゃなく、そういうコンテンツです。</p>
+    </div>
+  </section>
+
+  <!-- ARTICLE SECTION -->
+  <section id="article" class="lp-section">
+    <div class="lp-section__inner">
+      <div class="lp-badge">公開中</div>
+      <h2 class="lp-section__title">桐島が壮絶な過去から<br />成功を掴むまで</h2>
+      <p class="lp-section__sub">── 全文無料公開・読了20分</p>
+
+      <div class="lp-preview">
+        <div class="lp-preview__img">
+          <img src="/images/p003_img01.jpg" alt="受験期の桐島" />
+          <img src="/images/p095_img01.jpg" alt="一つの結論" />
+          <img src="/images/p092_img01.jpg" alt="現在の桐島" />
+        </div>
+        <div class="lp-preview__body">
+          <div class="lp-preview__point">
+            <span class="lp-preview__num">01</span>
+            <p><strong>サークル出禁・留年・タイでニューハーフに全財産を奪われた男</strong>が、なぜ経験人数1200人を超えるようになったのか。</p>
+          </div>
+          <div class="lp-preview__point">
+            <span class="lp-preview__num">02</span>
+            <p><strong>100万円の借金を背負って上京</strong>し、1ヶ月で女性の合鍵10本を手にするまでのフルコミット生活の全貌。</p>
+          </div>
+          <div class="lp-preview__point">
+            <span class="lp-preview__num">03</span>
+            <p>モテ力を手に入れたのに<strong>借金200万・1日1食200円</strong>だった男が、裏垢で年商1億円を達成するまでの逆転劇。</p>
+          </div>
+          <div class="lp-preview__point">
+            <span class="lp-preview__num">04</span>
+            <p>39歳164cm・15年彼女なしの男が<strong>2ヶ月で15人切り・月収50万円</strong>を達成。再現性の証明。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-cta-box">
+        <p class="lp-cta-box__label">↓ 今すぐ全文を読む（無料）</p>
+        <a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener" class="lp-cta-btn lp-cta-btn--main">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          桐島の全記録を読む
+        </a>
+        <p class="lp-cta-box__note">※ この記事を読んだ感想を公式LINEへ送ると、<strong style="color:var(--gold-light);">限定特典を受け取れます</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKUTEN TEASER -->
+  <section class="lp-tokuten">
+    <div class="lp-tokuten__inner">
+      <div class="lp-tokuten__lock">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <p class="lp-tokuten__eyebrow">感想を送った人だけが受け取れる</p>
+      <h2 class="lp-tokuten__title">感想限定特典</h2>
+      <p class="lp-tokuten__subtitle">桐島がたった１投稿で<span style="color:var(--gold-light);">数百万円を売り上げた裏側</span></p>
+
+      <div class="lp-tokuten__cards" style="grid-template-columns:1fr;">
+        <div class="lp-tokuten__card lp-tokuten__card--featured">
+          <div class="lp-tokuten__card-num lp-tokuten__card-num--gold">特典①</div>
+          <h3 class="lp-tokuten__card-title">桐島のモテ特化<br /><span style="color:var(--gold-light);">個別相談（完全無料）</span></h3>
+          <p class="lp-tokuten__card-body">
+            桐島が直接、<strong>あなたの現状・悩み・目標</strong>をヒアリングし、最短で結果を出すための戦略を個別設計する。<br /><br />
+            「何から始めればいいかわからない」「アプリでマッチしない」「会えても抱けない」「裏垢を始めたいけど何もわからない」──<strong>どんな状況からでも、あなた専用の勝ち筋を設計</strong>します。<br /><br />
+            これまでこのカウンセリングを受けた男性の多くが、<strong>「女遊びと金稼ぎへの概念が180°変わった」</strong>と回答。<strong style="color:var(--gold-light);">実際に人生が変わるかどうかはここで決まる。</strong>
+          </p>
+          <div class="lp-tokuten__card-badge" style="background:var(--gold); color:#000;">最重要・ここから全てが変わる</div>
+        </div>
+        <div class="lp-tokuten__card lp-tokuten__card--featured">
+          <div class="lp-tokuten__card-num lp-tokuten__card-num--gold">特典②</div>
+          <h3 class="lp-tokuten__card-title">１投稿470万円超えの<br /><span style="color:var(--gold-light);">ハメ撮り動画（3時間11分・ノーカット）を無料プレゼント</span></h3>
+          <p class="lp-tokuten__card-body">現在は販売停止済み。再販予定なし。<strong>この特典を受け取った人だけ</strong>が見られる、完全限定のフル動画。売上金額から撮影の流れまで全て公開する。</p>
+          <div style="display:grid; grid-template-columns:1fr; gap:8px; margin:16px 0 12px;">
+            <img src="/images/tokuten-sample.jpg" alt="特典②イメージ1" style="width:100%; border-radius:6px; border:1px solid #2a2000;" />
+            <img src="/images/p127_img02.jpg" alt="特典②イメージ2" style="width:100%; border-radius:6px; border:1px solid #2a2000;" />
+          </div>
+          <div class="lp-tokuten__card-badge">販売停止・完全限定</div>
+        </div>
+      </div>
+
+      <div class="lp-tokuten__how">
+        <p class="lp-tokuten__how-title">受け取り方法</p>
+        <div class="lp-tokuten__steps">
+          <div class="lp-tokuten__step">
+            <span class="lp-tokuten__step-num">1</span>
+            <p>上の「桐島の全記録を読む」から記事を読む</p>
+          </div>
+          <div class="lp-tokuten__step-arrow">↓</div>
+          <div class="lp-tokuten__step">
+            <span class="lp-tokuten__step-num">2</span>
+            <p>読んだ感想を公式LINEへ送る</p>
+          </div>
+          <div class="lp-tokuten__step-arrow">↓</div>
+          <div class="lp-tokuten__step">
+            <span class="lp-tokuten__step-num">3</span>
+            <p>特典①②が届く</p>
+          </div>
+        </div>
+        <a href="https://lin.ee/9hTYDII" target="_blank" rel="noopener" class="lp-cta-btn lp-cta-btn--line">
+          <svg width="22" height="22" viewBox="0 0 48 48" fill="currentColor"><path d="M24 4C12.95 4 4 12.4 4 22.8c0 9.3 7.4 17.1 17.4 18.6l1.5.3v6.8l6.2-3.4c1-.5 2.1-.8 3.2-.9H33c10.6 0 15-6.8 15-13.4C48 12.4 35.05 4 24 4z"/></svg>
+          公式LINEで感想を送って特典を受け取る
+        </a>
+        <p style="font-size:.78rem; color:var(--text-muted); margin-top:12px;">※特典へのリンクは感想送信後にお送りします</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /mainContent -->
+
+<style>
+/* ── COUNTDOWN BAR ── */
+.cd-bar {
+  position: sticky;
+  top: 64px;
+  z-index: 95;
+  background: #0d0000;
+  border-bottom: 1px solid var(--accent);
+  padding: 10px 16px;
+  text-align: center;
+}
+.cd-bar__label {
+  font-size: .68rem;
+  letter-spacing: .15em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.cd-bar__timer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 4px;
+}
+.cd-unit { display: flex; align-items: baseline; gap: 2px; }
+.cd-num {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  min-width: 2ch;
+  display: inline-block;
+  text-align: center;
+}
+.cd-unit-label {
+  font-size: .6rem;
+  color: var(--text-muted);
+  letter-spacing: .06em;
+}
+.cd-sep {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 900;
+  margin: 0 2px;
+  line-height: 1;
+}
+.cd-bar__sub {
+  font-size: .65rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: .06em;
+}
+
+/* ── EXPIRED ── */
+.expired-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.97);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.expired-box {
+  text-align: center;
+  max-width: 480px;
+}
+.expired-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.expired-title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.expired-body {
+  color: var(--text-muted);
+  line-height: 1.9;
+  font-size: .95rem;
+}
+
+/* ── INTRO ── */
+.lp-intro {
+  background: #0d0005;
+  border-bottom: 1px solid var(--border);
+  padding: 48px 24px;
+}
+.lp-intro__inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+.lp-intro__catch {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.lp-intro__body {
+  color: var(--text-muted);
+  font-size: .95rem;
+  line-height: 2;
+}
+
+/* ── ARTICLE SECTION ── */
+.lp-section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border);
+}
+.lp-section__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.lp-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  padding: 4px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.lp-section__title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.lp-section__sub {
+  color: var(--text-muted);
+  font-size: .88rem;
+  margin-bottom: 40px;
+  letter-spacing: .06em;
+}
+.lp-preview__img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.lp-preview__img img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+  filter: brightness(.8);
+}
+.lp-preview__point {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.lp-preview__point:last-child { border-bottom: none; }
+.lp-preview__num {
+  flex-shrink: 0;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  min-width: 36px;
+}
+.lp-preview__point p {
+  font-size: .95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  padding-top: 4px;
+}
+.lp-preview__point p strong { color: var(--text); }
+
+/* ── CTA BOX ── */
+.lp-cta-box {
+  margin-top: 40px;
+  text-align: center;
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 32px 24px;
+}
+.lp-cta-box__label {
+  font-size: .82rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  letter-spacing: .06em;
+}
+.lp-cta-box__note {
+  margin-top: 16px;
+  font-size: .8rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+.lp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 18px 32px;
+  border-radius: 6px;
+  transition: opacity .2s, transform .2s;
+  width: 100%;
+  max-width: 400px;
+  letter-spacing: .04em;
+}
+.lp-cta-btn:hover { opacity: .88; transform: translateY(-2px); }
+.lp-cta-btn--main {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(200,16,46,.3);
+}
+.lp-cta-btn--line {
+  background: #06c755;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(6,199,85,.3);
+  margin-top: 24px;
+}
+
+/* ── TOKUTEN TEASER ── */
+.lp-tokuten {
+  background: #06000d;
+  padding: 72px 0 80px;
+}
+.lp-tokuten__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+.lp-tokuten__lock {
+  color: var(--gold);
+  margin-bottom: 16px;
+  opacity: .8;
+}
+.lp-tokuten__eyebrow {
+  font-size: .75rem;
+  letter-spacing: .2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.lp-tokuten__title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.lp-tokuten__subtitle {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+.lp-tokuten__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 48px;
+}
+@media (max-width: 560px) {
+  .lp-tokuten__cards { grid-template-columns: 1fr; }
+  .lp-preview__img { grid-template-columns: repeat(3, 1fr); }
+}
+.lp-tokuten__card {
+  background: #0d0a00;
+  border: 1px solid #2a2000;
+  border-radius: 8px;
+  padding: 24px 18px;
+  position: relative;
+}
+.lp-tokuten__card--featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 32px rgba(184,145,42,.15);
+}
+.lp-tokuten__card-num {
+  font-size: 1.1rem;
+  letter-spacing: .1em;
+  color: var(--text-muted);
+  font-weight: 900;
+  margin-bottom: 12px;
+  font-family: var(--serif);
+}
+.lp-tokuten__card-num--gold { color: var(--gold); }
+.lp-tokuten__card-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.lp-tokuten__card-body {
+  font-size: .85rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+.lp-tokuten__card-body strong { color: var(--text); }
+.lp-tokuten__card-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-top: 12px;
+  letter-spacing: .08em;
+}
+
+/* ── HOW TO ── */
+.lp-tokuten__how {
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 32px 24px;
+}
+.lp-tokuten__how-title {
+  font-size: .75rem;
+  letter-spacing: .2em;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.lp-tokuten__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 8px;
+}
+.lp-tokuten__step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #141414;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 18px;
+}
+.lp-tokuten__step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--gold);
+  color: #000;
+  border-radius: 50%;
+  font-size: .8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lp-tokuten__step p {
+  font-size: .88rem;
+  color: var(--text);
+  text-align: left;
+}
+.lp-tokuten__step-arrow {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1rem;
+  padding: 4px 0;
+}
+</style>
+
+<script>
+(function() {
+  const FIVE_DAYS = 5 * 24 * 60 * 60 * 1000;
+  const KEY = 'mote_lp_start';
+
+  // 初回アクセス時刻を記録
+  if (!localStorage.getItem(KEY)) {
+    localStorage.setItem(KEY, Date.now().toString());
+  }
+
+  const startTime = parseInt(localStorage.getItem(KEY));
+  const expireTime = startTime + FIVE_DAYS;
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const now = Date.now();
+    const remaining = expireTime - now;
+
+    if (remaining <= 0) {
+      // 期限切れ
+      document.getElementById('mainContent').style.display = 'none';
+      document.getElementById('cdBar').style.display = 'none';
+      document.getElementById('expiredOverlay').style.display = 'flex';
+      return;
+    }
+
+    const d = Math.floor(remaining / (1000 * 60 * 60 * 24));
+    const h = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((remaining % (1000 * 60)) / 1000);
+
+    document.getElementById('cdD').textContent = d;
+    document.getElementById('cdH').textContent = pad(h);
+    document.getElementById('cdM').textContent = pad(m);
+    document.getElementById('cdS').textContent = pad(s);
+
+    // 残り1日以下は赤く点滅
+    if (remaining < 24 * 60 * 60 * 1000) {
+      document.getElementById('cdBar').style.background = '#1a0000';
+    }
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+
+</BaseLayout>
