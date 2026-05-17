@@ -5,29 +5,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="page-content">
     <h1 class="page-title">About</h1>
 
-    <div style="display:grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; margin-bottom: 64px;">
-      <div>
-        <img src="/images/p008_img01.jpg" alt="桐島" style="width:100%; border-radius:6px; border:1px solid var(--border);" />
+    <div class="about-profile">
+      <div class="about-profile__img">
+        <img src="/images/p008_img01.jpg" alt="桐島" />
       </div>
-      <div>
-        <p style="font-size:.78rem; letter-spacing:.2em; color:var(--accent); font-weight:700; text-transform:uppercase; margin-bottom:12px;">運営者</p>
-        <h2 style="font-family:var(--serif); font-size:2rem; font-weight:900; color:#fff; margin-bottom:20px;">桐島</h2>
-        <ul style="list-style:none; line-height:2.4; color:var(--text-muted); font-size:.9rem;">
-          <li>X（旧Twitter）フォロワー <strong style="color:var(--text);">16万人超</strong></li>
-          <li>経験人数 <strong style="color:var(--text);">1,200人 over</strong></li>
-          <li>裏垢関連ビジネス <strong style="color:var(--text);">年商1億円達成</strong></li>
-          <li>モテ男育成塾 塾生 <strong style="color:var(--text);">600人以上</strong></li>
+      <div class="about-profile__info">
+        <p class="about-profile__label">運営者</p>
+        <h2 class="about-profile__name">桐島</h2>
+        <ul class="about-profile__list">
+          <li>X（旧Twitter）フォロワー <strong>16万人超</strong></li>
+          <li>経験人数 <strong>1,200人 over</strong></li>
+          <li>裏垢関連ビジネス <strong>年商1億円達成</strong></li>
+          <li>モテ男育成塾 塾生 <strong>600人以上</strong></li>
         </ul>
       </div>
     </div>
 
-    <style>
-      @media (max-width: 640px) {
-        .about-profile { grid-template-columns: 1fr !important; }
-      }
-    </style>
-
-    <div class="prose" style="max-width:100%; padding:0;">
+    <div class="prose" style="max-width:100%; padding:0; margin-top:48px;">
       <h2>どん底からの出発</h2>
       <p>中高時代はメガネ・坊主・ニキビの「陰キャの教科書」。大学でサークル出禁・留年。タイへ渡るもニューハーフに全財産をカツアゲされ、消費者金融3社から計200万円の借金。200円以下の飯を1日1食という極貧生活。</p>
       <p>それが、俺のスタートラインだった。</p>
@@ -41,13 +35,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2>モテ男育成塾を立ち上げた理由</h2>
       <p>「非モテで極貧だった、あの頃の俺が本当に欲しかった講習を作ろう」──その一心でモテ男育成塾を設立。恋愛コンサルとビジネスコンサルの両方を同時に学べる、唯一無二の環境を用意した。これまで600人以上を非モテからモテ男に変えてきた実績がある。</p>
     </div>
-
-    <div style="margin-top:64px; text-align:center;">
-      <p style="font-size:.75rem; letter-spacing:.2em; color:var(--accent); font-weight:700; text-transform:uppercase; margin-bottom:20px;">無料相談受付中</p>
-      <a href="https://lin.ee/9hTYDII" target="_blank" rel="noopener" class="cta-btn">
-        <svg width="22" height="22" viewBox="0 0 48 48" fill="currentColor"><path d="M24 4C12.95 4 4 12.4 4 22.8c0 9.3 7.4 17.1 17.4 18.6l1.5.3v6.8l6.2-3.4c1-.5 2.1-.8 3.2-.9H33c10.6 0 15-6.8 15-13.4C48 12.4 35.05 4 24 4z"/></svg>
-        公式LINEで桐島に相談する
-      </a>
-    </div>
   </div>
+
+  <style>
+    .about-profile {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .about-profile__img img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .about-profile__label {
+      font-size: .78rem;
+      letter-spacing: .2em;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .about-profile__name {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .about-profile__list {
+      list-style: none;
+      line-height: 2.4;
+      color: var(--text-muted);
+      font-size: .9rem;
+    }
+    .about-profile__list strong {
+      color: var(--text);
+    }
+    @media (max-width: 640px) {
+      .about-profile {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .about-profile__img img {
+        max-width: 200px;
+      }
+      .about-profile__name {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
 </BaseLayout>
