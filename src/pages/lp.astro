@@ -41,9 +41,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- 桐島からのメッセージ -->
   <div class="lp-message">
     <p>こんにちは、桐島です。</p>
-    <p>この度はコンテンツのお受け取りありがとうございます。</p>
-    <p>このページでは、俺が4年以上かけて積み上げてきた<strong>「全記録」へのリンク</strong>と、<strong>記事を読んで感想を送ってくれた方だけが受け取れる限定特典</strong>の情報をお届けします。</p>
-    <p>ぜひ最後まで読んでいただけると嬉しいです。</p>
+    <p>この記事では、5年以上の膨大な時間と金をかけて辿りついた、女・金・自由を手にする"裏側"を完全公開し、さらに記事を読んで感想を送ってくれた方のみが受け取れる限定特典をお届けします。</p>
+    <p style="color:var(--accent); font-weight:700;">⚠️5日間で完全に公開終了し、それ以降2度と閲覧できなくなるので注意してください。</p>
   </div>
 
   <div class="lp-divider"></div>
@@ -84,7 +83,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p>桐島が直接、<strong>あなたの現状・悩み・目標</strong>をヒアリングし、最短で結果を出すための戦略を個別設計する。</p>
     <p>「何から始めればいいかわからない」「アプリでマッチしない」「会えても抱けない」「裏垢を始めたいけど何もわからない」──<strong>どんな状況からでも、あなた専用の勝ち筋を設計</strong>します。</p>
     <p>これまでこのカウンセリングを受けた男性の多くが、<strong>「女遊びと金稼ぎへの概念が180°変わった」</strong>と回答。<strong style="color:var(--gold-light);">実際に人生が変わるかどうかはここで決まる。</strong></p>
-    <div class="lp-tokuten-block__badge">最重要・ここから全てが変わる</div>
   </div>
 
   <div class="lp-divider"></div>
@@ -464,11 +462,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   margin-bottom: 28px;
 }
 .lp-kansou__count {
-  font-size: 1.4rem;
+  font-size: clamp(.8rem, 3.5vw, 1.4rem);
   font-family: var(--serif);
   font-weight: 900;
   color: var(--gold);
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 .lp-kansou__title {
   font-family: var(--serif);
