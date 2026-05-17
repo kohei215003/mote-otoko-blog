@@ -3,8 +3,10 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  hideNav?: boolean;
+  hideHeader?: boolean;
 }
-const { title, description = 'モテ男育成塾 – 非モテから下克上した桐島の記録', ogImage } = Astro.props;
+const { title, description = 'モテ男育成塾 – 非モテから下克上した桐島の記録', ogImage, hideNav = false, hideHeader = false } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="ja">
@@ -864,15 +866,19 @@ const { title, description = 'モテ男育成塾 – 非モテから下克上し
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a href="/" class="site-logo">モテ男育成塾</a>
-      <nav class="site-nav">
-        <a href="/">記事</a>
-        <a href="/contact">公式LINE</a>
-      </nav>
-    </div>
-  </header>
+  {!hideHeader && (
+    <header class="site-header">
+      <div class="site-header__inner" style={hideNav ? "justify-content:center;" : ""}>
+        <a href="/" class="site-logo">モテ男育成塾</a>
+        {!hideNav && (
+          <nav class="site-nav">
+            <a href="/">記事</a>
+            <a href="/contact">公式LINE</a>
+          </nav>
+        )}
+      </div>
+    </header>
+  )}
 
   <main>
     <slot />
