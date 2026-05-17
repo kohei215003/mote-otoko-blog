@@ -145,6 +145,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
 
+  <div class="lp-divider"></div>
+
+  <!-- 感想セクション -->
+  <div class="lp-kansou">
+    <div class="lp-kansou__header">
+      <p class="lp-kansou__count">200件を超える感想をいただきました</p>
+      <h2 class="lp-kansou__title">その一部を公開</h2>
+    </div>
+    <div class="lp-kansou__list">
+      <img src="/images/kansou/IMG_7567.jpg" alt="感想1" />
+      <img src="/images/kansou/IMG_7568.jpg" alt="感想2" />
+      <img src="/images/kansou/IMG_7569.jpg" alt="感想3" />
+      <img src="/images/kansou/IMG_7570.jpg" alt="感想4" />
+      <img src="/images/kansou/IMG_7571.jpg" alt="感想5" />
+      <img src="/images/kansou/IMG_7572.jpg" alt="感想6" />
+      <img src="/images/kansou/IMG_7573.jpg" alt="感想7" />
+      <img src="/images/kansou/IMG_7574.jpg" alt="感想8" />
+      <img src="/images/kansou/IMG_7575.jpg" alt="感想9" />
+      <img src="/images/kansou/IMG_7576.jpg" alt="感想10" />
+      <img src="/images/kansou/IMG_7577.jpg" alt="感想11" />
+      <img src="/images/kansou/IMG_7578.jpg" alt="感想12" />
+    </div>
+  </div>
+
 </div><!-- /mainContent -->
 
 <style>
@@ -423,6 +447,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .lp-step2-item p { font-size: .9rem; color: var(--text); }
 .lp-step2-arrow { text-align: center; color: var(--gold); font-size: 1rem; padding: 6px 0; }
 .lp-step2-note { margin-top: 14px; font-size: .75rem; color: var(--text-muted); }
+
+/* ── 感想セクション ── */
+.lp-kansou { padding: 8px 0 40px; }
+.lp-kansou__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.lp-kansou__count {
+  font-size: .78rem;
+  letter-spacing: .15em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.lp-kansou__title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff;
+}
+.lp-kansou__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lp-kansou__list img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
 
 /* ── BUTTONS ── */
 .lp-btn {
