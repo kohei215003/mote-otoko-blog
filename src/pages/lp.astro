@@ -217,10 +217,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 .lp-main-title {
   font-family: var(--serif);
-  font-size: clamp(1.15rem, 3.5vw, 1.7rem);
+  font-size: clamp(.9rem, 3.8vw, 1.7rem);
   font-weight: 900;
   color: #fff;
-  line-height: 1.5;
+  line-height: 1.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 480px) {
+  .lp-main-title {
+    white-space: normal;
+    font-size: 3.8vw;
+  }
 }
 
 /* ── MESSAGE ── */
