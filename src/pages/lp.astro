@@ -33,45 +33,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <!-- ========== MAIN CONTENT ========== -->
 <div id="mainContent" class="lp-wrap">
 
-  <!-- タイトル -->
-  <div class="lp-title-section">
-    <h1 class="lp-main-title">借金1200万・童貞・いじめられっ子だった桐島が<br />女も金も自由も手に入れた唯一の方法。</h1>
-  </div>
-
-  <!-- 桐島からのメッセージ -->
-  <div class="lp-message">
-    <p>こんにちは、桐島です。</p>
-    <p>この記事では5年以上の膨大な時間と金をかけて辿りついた、女・金・自由を手にする"裏側"を完全公開しました。<br />さらに記事を読んで感想を送ってくれた方のみが受け取れる限定特典をお届けします。</p>
-    <p style="color:var(--accent); font-weight:700;">⚠️5日間で完全に公開終了し、それ以降2度と閲覧できなくなるので注意してください。</p>
-  </div>
-
-  <div class="lp-divider"></div>
-
   <!-- STEP 1 -->
   <div class="lp-step">
-    <div class="lp-step__label">Step 1</div>
-    <h2 class="lp-step__title">記事を読む</h2>
-    <p class="lp-step__note">※ この記事は<strong>5日間限定</strong>で公開しています。期限を過ぎると読めなくなりますのでご注意ください。</p>
+
+    <!-- Step1ヘッダー -->
+    <div class="lp-step1-header">
+      <p class="lp-step1-header__label">Step1：記事を読む</p>
+      <h2 class="lp-step1-header__title">以下の記事は<br />5日間限定です</h2>
+      <p class="lp-step1-header__sub">それ以降は非公開にしますので、興味ある方はお早めに。</p>
+    </div>
+
+    <!-- 金文字タイトル -->
+    <div class="lp-title-section">
+      <h1 class="lp-main-title">借金1200万・童貞・いじめられっ子だった桐島が<br />女も金も自由も手に入れた唯一の方法。</h1>
+    </div>
 
     <div class="lp-article-preview">
+      <a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener" class="lp-article-link">
+        こちらの記事（129ページ）はこちらから確認できます。
+      </a>
+
       <div class="lp-article-preview__imgs">
         <img src="/images/p003_img01.jpg" alt="受験期の桐島" />
         <img src="/images/p095_img01.jpg" alt="一つの結論" />
         <img src="/images/p092_img01.jpg" alt="現在の桐島" />
       </div>
 
-      <h3 class="lp-article-preview__title">借金1200万・童貞・いじめられっ子だった桐島が<br />女も金も自由も手に入れた唯一の方法。</h3>
-
       <ul class="lp-article-preview__points">
-        <li><strong>01</strong> サークル出禁・留年・タイでニューハーフに全財産を奪われた男が、なぜ経験人数1200人を超えるようになったのか。</li>
-        <li><strong>02</strong> <strong>借金を背負って上京</strong>し、1ヶ月で女性の合鍵10本を手にするまでのフルコミット生活の全貌。</li>
-        <li><strong>03</strong> モテ力を手に入れたのに<strong>借金1200万・1日1食200円</strong>だった男が、裏垢で年商1億円を達成するまでの逆転劇。</li>
-        <li><strong>04</strong> 39歳164cm・15年彼女なしのコンサル生が<strong>2ヶ月で15人切り・月収50万円</strong>を達成。再現性の証明。</li>
+        <li><a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener"><strong>01</strong> サークル出禁・留年・タイでニューハーフに全財産を奪われた男が、<strong>なぜ経験人数1200人を超えるようになったのか。</strong></a></li>
+        <li><a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener"><strong>02</strong> <strong>借金を背負って上京</strong>し、1ヶ月で女性の合鍵10本を手にするまでのフルコミット生活の全貌。</a></li>
+        <li><a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener"><strong>03</strong> モテ力を手に入れたのに<strong>借金1200万・1日1食200円</strong>だった男が、裏垢で年商1億円を達成するまでの逆転劇。</a></li>
+        <li><a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener"><strong>04</strong> 39歳164cm・15年彼女なしのコンサル生が<strong>2ヶ月で15人切り・月収50万円</strong>を達成。再現性の証明。</a></li>
       </ul>
 
-      <a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener" class="lp-btn lp-btn--main">
-        記事を読む（全文無料・読了20分）
-      </a>
     </div>
   </div>
 
@@ -143,36 +137,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
 
-  <div class="lp-divider"></div>
-
-  <!-- 感想セクション -->
-  <div class="lp-kansou">
-    <div class="lp-kansou__header">
-      <p class="lp-kansou__count">200件を超える感想をいただきました</p>
-      <h2 class="lp-kansou__title">その一部を公開</h2>
-    </div>
-    <div class="lp-kansou__list">
-      <img src="/images/kansou/IMG_7567.jpg" alt="感想1" />
-      <img src="/images/kansou/IMG_7568.jpg" alt="感想2" />
-      <img src="/images/kansou/IMG_7569.jpg" alt="感想3" />
-      <img src="/images/kansou/IMG_7570.jpg" alt="感想4" />
-      <img src="/images/kansou/IMG_7571.jpg" alt="感想5" />
-      <img src="/images/kansou/IMG_7572.jpg" alt="感想6" />
-      <img src="/images/kansou/IMG_7573.jpg" alt="感想7" />
-      <img src="/images/kansou/IMG_7574.jpg" alt="感想8" />
-      <img src="/images/kansou/IMG_7575.jpg" alt="感想9" />
-      <img src="/images/kansou/IMG_7576.jpg" alt="感想10" />
-      <img src="/images/kansou/IMG_7577.jpg" alt="感想11" />
-      <img src="/images/kansou/IMG_7578.jpg" alt="感想12" />
-    </div>
-
-    <div style="margin-top:32px; text-align:center;">
-      <a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener" class="lp-btn lp-btn--main">
-        記事を読む（全文無料・読了20分）
-      </a>
-    </div>
-  </div>
-
 </div><!-- /mainContent -->
 
 <style>
@@ -241,7 +205,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 /* ── TITLE ── */
 .lp-title-section {
-  padding: 40px 0 32px;
+  padding: 24px 0 20px;
   border-bottom: 1px solid var(--border);
 }
 .lp-main-title {
@@ -285,6 +249,114 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 /* ── STEP ── */
 .lp-step { padding: 8px 0; }
+
+/* Step1ヘッダー */
+.lp-step1-header {
+  background: var(--accent);
+  margin: 0 -20px;
+  padding: 20px 24px 24px;
+  text-align: center;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+.lp-step1-header__label {
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #f5e642;
+  margin-bottom: 8px;
+}
+.lp-step1-header__title {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 4.5vw, 1.8rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.lp-step1-header__sub {
+  font-size: .78rem;
+  color: rgba(255,255,255,.85);
+  line-height: 1.6;
+}
+
+/* 記事タイトル */
+.lp-article-preview__main-title {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 3.8vw, 1.3rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  padding-top: 20px;
+}
+
+/* 記事リンク */
+.lp-article-link {
+  display: block;
+  margin-bottom: 20px;
+  color: #4a9eff;
+  font-size: .95rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lp-step__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #0d0d0d;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.lp-step__card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.lp-step__card-sub {
+  font-size: .8rem;
+  color: var(--text-muted);
+  letter-spacing: .06em;
+}
+.lp-step__card-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 140px;
+  flex-shrink: 0;
+  position: relative;
+  transition: opacity .2s, transform .2s;
+}
+.lp-step__card-btn:hover { opacity: .88; transform: translateY(-1px); }
+.lp-step__card-btn-text {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.lp-step__card-btn-sub {
+  font-size: .65rem;
+  color: rgba(255,255,255,.8);
+  letter-spacing: .04em;
+}
+.lp-step__card-btn-arrow {
+  margin-top: 4px;
+}
 .lp-step__label {
   display: inline-block;
   background: var(--accent);
@@ -352,6 +424,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   line-height: 1.8;
 }
 .lp-article-preview__points li:last-child { border-bottom: none; }
+.lp-article-preview__points li a {
+  display: block;
+  color: inherit;
+  width: 100%;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255,255,255,.4);
+}
+.lp-article-preview__points li a:hover { opacity: .75; }
+
+/* 画像リンクエリア */
+.lp-imgs-link {
+  display: block;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  transition: opacity .2s;
+}
+.lp-imgs-link:hover { opacity: .88; }
+.lp-imgs-link .lp-article-preview__imgs {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.lp-imgs-link__label {
+  background: var(--accent);
+  color: #fff;
+  font-size: .88rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .lp-article-preview__points li strong:first-child {
   color: var(--accent);
   font-family: var(--serif);
