@@ -43,40 +43,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="lp-step1-header__sub">それ以降は非公開にしますので、興味ある方はお早めに。</p>
     </div>
 
-    <div class="lp-article-preview">
+    <a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener" class="lp-article-preview">
       <!-- 金文字タイトル -->
       <div class="lp-title-section">
         <h1 class="lp-main-title">借金1200万・童貞・いじめられっ子だった桐島が<br />女も金も自由も手に入れた唯一の方法。</h1>
       </div>
 
-      <!-- 記事カードグリッド -->
-      <div class="lp-article-cards">
-        <a href="https://mote-otoko-blog.vercel.app/articles/01-kirishima-past" target="_blank" rel="noopener" class="lp-article-card" aria-label="Ch.01 陰キャの底辺が見た地獄 ── 桐島の壮絶な過去">
-          <div class="lp-article-card__img-wrap">
-            <img src="/images/p003_img01.jpg" alt="受験期の桐島 - Ch.01 桐島の過去" />
-            <span class="lp-article-card__badge">Ch.01</span>
-            <span class="lp-article-card__btn">記事を読む →</span>
-          </div>
-          <p class="lp-article-card__hint">タップして記事を読む</p>
-        </a>
-
-        <a href="https://mote-otoko-blog.vercel.app/articles/03-urawaka" target="_blank" rel="noopener" class="lp-article-card" aria-label="Ch.03 モテ力を1億円に変えた日 ── 裏垢参入と爆速マネタイズ">
-          <div class="lp-article-card__img-wrap">
-            <img src="/images/p092_img01.jpg" alt="裏垢マネタイズの成果 - Ch.03 裏垢参入" />
-            <span class="lp-article-card__badge">Ch.03</span>
-            <span class="lp-article-card__btn">記事を読む →</span>
-          </div>
-          <p class="lp-article-card__hint">タップして記事を読む</p>
-        </a>
-
-        <a href="https://mote-otoko-blog.vercel.app/articles/04-conclusion" target="_blank" rel="noopener" class="lp-article-card" aria-label="Ch.04 男は、モテも金も両方とれ ── モテ男育成塾を作った理由">
-          <div class="lp-article-card__img-wrap">
-            <img src="/images/p095_img01.jpg" alt="男の幸福論 - Ch.04 モテ男育成塾の結論" />
-            <span class="lp-article-card__badge">Ch.04</span>
-            <span class="lp-article-card__btn">記事を読む →</span>
-          </div>
-          <p class="lp-article-card__hint">タップして記事を読む</p>
-        </a>
+      <div class="lp-article-preview__imgs">
+        <img src="/images/p003_img01.jpg" alt="受験期の桐島" />
+        <img src="/images/p095_img01.jpg" alt="一つの結論" />
+        <img src="/images/p092_img01.jpg" alt="現在の桐島" />
       </div>
 
       <ul class="lp-article-preview__points">
@@ -86,10 +62,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <li><strong>04</strong> 39歳164cm・15年彼女なしのコンサル生が<strong>2ヶ月で15人切り・月収50万円</strong>を達成。再現性の証明。</li>
       </ul>
 
-      <a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener" class="lp-article-preview__cta">
-        記事を全部読む（129ページ）&nbsp;›
-      </a>
-    </div>
+      <div class="lp-article-preview__cta">
+        記事を読む（129ページ）&nbsp;›
+      </div>
+    </a>
   </div>
 
   <div class="lp-divider"></div>
@@ -410,11 +386,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 /* ── ARTICLE PREVIEW ── */
 .lp-article-preview {
+  display: block;
   background: rgba(255,255,255,.03);
   border: 2px solid var(--accent);
   border-radius: 12px;
   padding: 20px 16px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity .2s, box-shadow .2s;
   box-shadow: 0 0 18px rgba(210,40,40,.25);
+}
+.lp-article-preview:hover {
+  opacity: .88;
+  box-shadow: 0 0 28px rgba(210,40,40,.5);
 }
 .lp-article-preview__cta {
   display: block;
@@ -427,74 +411,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   padding: 12px;
   border-radius: 6px;
   letter-spacing: .05em;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity .2s;
 }
-.lp-article-preview__cta:hover { opacity: .82; }
-
-/* ── ARTICLE CARDS ── */
-.lp-article-cards {
+.lp-article-preview__imgs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-bottom: 20px;
 }
-.lp-article-card {
-  display: block;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.lp-article-card__img-wrap {
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-}
-.lp-article-card__img-wrap img {
-  display: block;
+.lp-article-preview__imgs img {
   width: 100%;
   aspect-ratio: 3/4;
   object-fit: cover;
   object-position: center top;
-  transition: transform .3s ease, filter .3s ease;
-}
-.lp-article-card:hover .lp-article-card__img-wrap img {
-  transform: scale(1.05);
-  filter: brightness(1.12);
-}
-.lp-article-card__badge {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  background: rgba(0,0,0,.75);
-  color: var(--gold-light, #f5d06a);
-  font-size: .62rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  padding: 2px 7px;
   border-radius: 4px;
-}
-.lp-article-card__btn {
-  position: absolute;
-  bottom: 8px;
-  right: 6px;
-  background: rgba(0,0,0,.82);
-  color: #fff;
-  font-size: .65rem;
-  font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  letter-spacing: .04em;
-}
-.lp-article-card__hint {
-  margin: 5px 0 0;
-  font-size: .62rem;
-  color: var(--text-muted);
-  text-align: center;
-  letter-spacing: .04em;
 }
 .lp-article-preview__title {
   font-family: var(--serif);
