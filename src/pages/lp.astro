@@ -79,7 +79,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- 特典1（新） -->
   <div class="lp-tokuten-block">
-    <div class="lp-tokuten-block__num" style="color:var(--accent);">【特典①】モテ男育成塾 特別参加権</div>
+    <div class="lp-tokuten-block__num" class="lp-tokuten-block__num--gold">【特典①】モテ男育成塾 特別参加権</div>
     <p>この特典を受け取った方限定で、モテ男育成塾への<strong>特別案内枠</strong>をご用意しました。</p>
     <p>モテ男育成塾は、ただ恋愛ノウハウを学ぶ場所ではない。</p>
     <p>外見、コミュ力、マッチングアプリ、裏垢、マネタイズ、男としての自信。</p>
@@ -107,7 +107,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- 特典2 -->
   <div class="lp-tokuten-block">
-    <div class="lp-tokuten-block__num" style="color:var(--accent);">【特典②】桐島がたった１投稿で470万円以上を売り上げた「最強動画」を無料でまるごとプレゼント</div>
+    <div class="lp-tokuten-block__num" class="lp-tokuten-block__num--gold">【特典②】桐島がたった１投稿で470万円以上を売り上げた「最強動画」を無料でまるごとプレゼント</div>
     <p>桐島が今まで売ってきた中で<strong>ぶっちぎりで1番稼いだ動画</strong>の実際の売上金額をすべて公開する。</p>
     <p>さらに、</p>
     <ul class="lp-list">
@@ -131,7 +131,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- 特典3（旧・特典①） -->
   <div class="lp-tokuten-block">
-    <div class="lp-tokuten-block__num" style="color:var(--accent);">【特典③】桐島のモテ特化 個別相談（完全無料）</div>
+    <div class="lp-tokuten-block__num" class="lp-tokuten-block__num--gold">【特典③】桐島のモテ特化 個別相談（完全無料）</div>
     <p>桐島が直接、<strong>あなたの現状・悩み・目標</strong>をヒアリングし、最短で結果を出すための戦略を個別設計する。</p>
     <p>「何から始めればいいかわからない」「アプリでマッチしない」「会えても抱けない」「裏垢を始めたいけど何もわからない」──<strong>どんな状況からでも、あなた専用の勝ち筋を設計</strong>します。</p>
     <p>これまでこのカウンセリングを受けた男性の多くが、<strong>「女遊びと金稼ぎへの概念が180°変わった」</strong>と回答。<strong style="color:var(--gold-light);">実際に人生が変わるかどうかはここで決まる。</strong></p>
@@ -572,6 +572,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   color: #fff;
   line-height: 1.5;
   margin-bottom: 20px;
+}
+.lp-tokuten-block__num--gold {
+  background: linear-gradient(135deg, #f5d06a 0%, #fff 40%, #d4a83a 70%, #f5d06a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
