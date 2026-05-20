@@ -82,7 +82,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="lp-tokuten-block__num lp-tokuten-block__num--gold">【特典①】モテ男育成塾 特別参加権</div>
     <p>この特典を受け取った方限定で、モテ男育成塾への<strong>特別案内枠</strong>をご用意しました。</p>
     <p>モテ男育成塾は、ただ恋愛ノウハウを学ぶ場所ではない。</p>
-    <p>外見、コミュ力、マッチングアプリ、裏垢、マネタイズ、男としての自信。</p>
+    <p class="lp-tokuten-highlight">外見、コミュ力、マッチングアプリ、裏垢、マネタイズ、男としての自信。</p>
     <p>これらを数ヶ月で一気に攻略して、<strong>女も金も自由も手に入れる男になるための環境</strong>です。</p>
     <p>これまで多くの男性が、</p>
     <ul class="lp-list">
@@ -559,6 +559,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .lp-article-preview__points li strong { color: var(--text); }
 
 /* ── 特典ブロック ── */
+.lp-tokuten-highlight {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 3.2vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.8;
+  letter-spacing: .04em;
+  background: linear-gradient(135deg, #f5d06a 0%, #fff 40%, #d4a83a 70%, #f5d06a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-left: 3px solid #d4a83a;
+  padding-left: 12px;
+  margin: 16px 0 !important;
+}
 .lp-tokuten-block {
   padding: 8px 0;
   font-size: .95rem;
