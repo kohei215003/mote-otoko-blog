@@ -48,7 +48,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- カードヘッダー：タイトル＋矢印アイコン -->
       <div class="lp-article-preview__head">
         <div class="lp-title-section">
-          <h1 class="lp-main-title">借金1200万・童貞・いじめられっ子だった桐島が女も金も自由も手に入れた唯一の方法。</h1>
+          <h1 class="lp-main-title">借金1200万・童貞・いじめられっ子だった桐島が<br />女も金も自由も手に入れた唯一の方法。</h1>
         </div>
         <span class="lp-article-preview__arrow">↗</span>
       </div>
@@ -217,12 +217,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 .lp-main-title {
   font-family: var(--serif);
-  font-size: clamp(.9rem, 3.8vw, 1.7rem);
+  font-size: clamp(1rem, 2.6vw, 1.7rem);
   font-weight: 900;
   line-height: 1.6;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   background: linear-gradient(135deg, #f5d06a 0%, #fff 40%, #d4a83a 70%, #f5d06a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -230,8 +227,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 @media (max-width: 480px) {
   .lp-main-title {
-    white-space: normal;
-    font-size: 3.8vw;
+    font-size: 3.5vw;
   }
 }
 
