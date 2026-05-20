@@ -48,10 +48,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1 class="lp-main-title">借金1200万・童貞・いじめられっ子だった桐島が<br />女も金も自由も手に入れた唯一の方法。</h1>
     </div>
 
-    <div class="lp-article-preview">
-      <a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener" class="lp-article-link">
+    <a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener" class="lp-article-preview">
+      <span class="lp-article-link">
         こちらの記事（129ページ）はこちらから確認できます。
-      </a>
+      </span>
 
       <div class="lp-article-preview__imgs">
         <img src="/images/p003_img01.jpg" alt="受験期の桐島" />
@@ -60,13 +60,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <ul class="lp-article-preview__points">
-        <li><a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener"><strong>01</strong> サークル出禁・留年・タイでニューハーフに全財産を奪われた男が、<strong>なぜ経験人数1200人を超えるようになったのか。</strong></a></li>
-        <li><a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener"><strong>02</strong> <strong>借金を背負って上京</strong>し、1ヶ月で女性の合鍵10本を手にするまでのフルコミット生活の全貌。</a></li>
-        <li><a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener"><strong>03</strong> モテ力を手に入れたのに<strong>借金1200万・1日1食200円</strong>だった男が、裏垢で年商1億円を達成するまでの逆転劇。</a></li>
-        <li><a href="https://mote-otoko-blog.vercel.app" target="_blank" rel="noopener"><strong>04</strong> 39歳164cm・15年彼女なしのコンサル生が<strong>2ヶ月で15人切り・月収50万円</strong>を達成。再現性の証明。</a></li>
+        <li><strong>01</strong> サークル出禁・留年・タイでニューハーフに全財産を奪われた男が、<strong>なぜ経験人数1200人を超えるようになったのか。</strong></li>
+        <li><strong>02</strong> <strong>借金を背負って上京</strong>し、1ヶ月で女性の合鍵10本を手にするまでのフルコミット生活の全貌。</li>
+        <li><strong>03</strong> モテ力を手に入れたのに<strong>借金1200万・1日1食200円</strong>だった男が、裏垢で年商1億円を達成するまでの逆転劇。</li>
+        <li><strong>04</strong> 39歳164cm・15年彼女なしのコンサル生が<strong>2ヶ月で15人切り・月収50万円</strong>を達成。再現性の証明。</li>
       </ul>
-
-    </div>
+    </a>
   </div>
 
   <div class="lp-divider"></div>
@@ -386,11 +385,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 /* ── ARTICLE PREVIEW ── */
 .lp-article-preview {
+  display: block;
   background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity .2s;
 }
+.lp-article-preview:hover { opacity: .85; }
 .lp-article-preview__imgs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -424,15 +428,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   line-height: 1.8;
 }
 .lp-article-preview__points li:last-child { border-bottom: none; }
-.lp-article-preview__points li a {
-  display: block;
-  color: inherit;
-  width: 100%;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(255,255,255,.4);
-}
-.lp-article-preview__points li a:hover { opacity: .75; }
 
 /* 画像リンクエリア */
 .lp-imgs-link {
