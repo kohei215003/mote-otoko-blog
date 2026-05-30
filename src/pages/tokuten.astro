@@ -69,6 +69,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <img src="/images/tokuten/jacob-after.jpg" alt="ジェイコブ・5ヶ月後" />
         </div>
       </div>
+
+      <div class="proof-stack">
+        <figure class="proof-stack__item"><img src="/images/tokuten/jacob-tweet.jpg" alt="ジェイコブのポスト" /></figure>
+        <figure class="proof-stack__item"><img src="/images/tokuten/jacob-sales.jpg" alt="ジェイコブの売上実績" /></figure>
+      </div>
     </div>
 
     <div class="case-block">
@@ -732,6 +737,25 @@ body { background: #fff !important; color: #1a1a1a !important; }
 }
 .before-after__label--before { background: #555; }
 .before-after__label--after { background: #c41e1e; }
+
+/* 縦並びの追加証拠（ポスト→売上） */
+.proof-stack {
+  margin: 16px 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.proof-stack__item {
+  margin: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+.proof-stack__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .before-after__arrow {
   font-size: 1.4rem;
   color: #a8821e;
