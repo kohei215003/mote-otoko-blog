@@ -80,7 +80,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h3 class="case-block__name">大和 <span>（風俗での経験1人・ほぼ童貞）</span></h3>
       <p>2ヶ月で経験人数<strong>41人</strong>・フォロワー<strong>1.8万人</strong>・裏垢収益<strong>15万円</strong>達成。</p>
 
-      <div class="before-after">
+      <div class="before-after before-after--asym">
         <div class="before-after__item">
           <span class="before-after__label before-after__label--before">BEFORE</span>
           <img src="/images/tokuten/yamato-before.jpg" alt="大和・裏垢を始める前" />
@@ -722,6 +722,10 @@ body { background: #fff !important; color: #1a1a1a !important; }
   align-items: center;
   gap: 10px;
   margin: 18px 0 4px;
+}
+/* 非対称：BEFOREを小さく・AFTERを大きく */
+.before-after--asym {
+  grid-template-columns: 0.75fr auto 1.35fr;
 }
 .before-after__item {
   position: relative;
