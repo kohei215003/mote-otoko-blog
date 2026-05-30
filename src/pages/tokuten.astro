@@ -13,8 +13,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="lp-eyebrow">感想特典 ── 限定公開</p>
     <h1 class="lp-hero__title" style="text-align:center;">桐島式<br /><span style="color:#f5d06a;">裏垢自動集客システム</span></h1>
     <p class="lp-hero__sub" style="text-align:center;">〜 裏垢で美女を抱きまくりながら<strong style="color:#fff;">楽稼ぎ</strong>したい人へ 〜</p>
+
+    <div class="hero-nayami">
+      <p class="hero-nayami__lead">今、こんな悩みを抱えていないか？</p>
+      <ul class="hero-nayami__list">
+        <li>アプリに課金してるのに全然マッチしない</li>
+        <li>会えても奢るだけで終わる</li>
+        <li>性欲はあるのにオナニーしか解消方法がない</li>
+        <li>美女に相手にされない</li>
+        <li>男としての自信がない</li>
+        <li>本業以外で稼ぎたいけど方法がわからない</li>
+      </ul>
+      <p class="hero-nayami__conclusion">ぶっちゃけ全部、<span class="hero-nayami__keyword">「裏垢」</span>で解決できる。</p>
+    </div>
+
     <div style="display:flex; justify-content:center;">
-      <a href="#nayami" class="lp-scroll-btn">
+      <a href="#shikumi" class="lp-scroll-btn">
         読み始める
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
@@ -33,24 +47,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <a href="#kinkyu">今すぐ</a>
   <a href="#soudan">相談</a>
 </nav>
-
-<!-- ========== 悩み訴求 ========== -->
-<section id="nayami" class="chapter">
-  <div class="prose" style="padding-top: 20px;">
-    <h2 class="punch-headline">今、こんな悩みを抱えていないか？</h2>
-    <ul class="check-list">
-      <li>アプリに課金してるのに全然マッチしない</li>
-      <li>会えても奢るだけで終わる</li>
-      <li>性欲はあるのにオナニーしか解消方法がない</li>
-      <li>美女に相手にされない</li>
-      <li>男としての自信がない</li>
-      <li>本業以外で稼ぎたいけど方法がわからない</li>
-    </ul>
-    <div class="highlight-box">
-      ぶっちゃけ全部、「裏垢」で解決できる。
-    </div>
-  </div>
-</section>
 
 <!-- ========== 数ヶ月続けるとこうなる ========== -->
 <section class="chapter chapter--alt">
@@ -497,6 +493,71 @@ body { background: #fff !important; color: #1a1a1a !important; }
 </style>
 
 <style>
+/* ヒーロー内の悩みリスト */
+.hero-nayami {
+  max-width: 560px;
+  margin: 36px auto 32px;
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(245,208,106,.3);
+  border-radius: 10px;
+  padding: 24px 28px;
+  text-align: left;
+  backdrop-filter: blur(6px);
+}
+.hero-nayami__lead {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: .04em;
+}
+.hero-nayami__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+}
+.hero-nayami__list li {
+  position: relative;
+  padding: 7px 0 7px 22px;
+  font-size: .9rem;
+  color: #fff;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.hero-nayami__list li:last-child { border-bottom: none; }
+.hero-nayami__list li:before {
+  content: "✕";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  color: #c41e1e;
+  font-weight: 900;
+}
+.hero-nayami__conclusion {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  letter-spacing: .04em;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(245,208,106,.4);
+}
+.hero-nayami__keyword {
+  color: #f5d06a;
+  font-size: 1.25rem;
+}
+@media (max-width: 640px) {
+  .hero-nayami { padding: 20px 18px; margin: 28px auto 24px; }
+  .hero-nayami__lead { font-size: .95rem; }
+  .hero-nayami__list li { font-size: .82rem; }
+  .hero-nayami__conclusion { font-size: 1rem; }
+  .hero-nayami__keyword { font-size: 1.15rem; }
+}
+
 .punch-headline {
   font-family: var(--serif);
   font-size: clamp(1.4rem, 5vw, 2rem);
