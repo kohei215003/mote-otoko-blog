@@ -117,6 +117,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p>家にいながら、好みの女の子からのDMを待つだけ。<br />しかもアプリと違って、<strong>会えたら100%抱ける。</strong>デートも奢りもいらない。</p>
     <p>桐島は最高で1ヶ月に<strong style="color:#a8821e;">50人</strong>から密会依頼が届いた月もある。</p>
 
+    <div class="proof-row">
+      <figure class="proof-row__item"><img src="/images/tokuten/kirishima-dm.jpg" alt="桐島のDM画面" /></figure>
+      <figure class="proof-row__item"><img src="/images/tokuten/kirishima-forms.png" alt="密会フォームの届き具合" /></figure>
+    </div>
+
     <h3>裏垢で会える子の属性</h3>
     <p style="font-size:.95rem; color:var(--text);">ギャル、アイドル、キャバ嬢、ラウンジ嬢、AV女優、大学生、OL、彼氏持ち…</p>
     <p>アプリは「あなたの顔が好みの子」しか来ない。裏垢は<strong style="color:#c41e1e;">「あなたの性癖に刺さった子」</strong>が来る。だから幅が広い。</p>
@@ -754,6 +759,26 @@ body { background: #fff !important; color: #1a1a1a !important; }
 }
 .before-after__label--before { background: #555; }
 .before-after__label--after { background: #c41e1e; }
+
+/* 横並びの証拠画像（2枚並列） */
+.proof-row {
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.proof-row__item {
+  margin: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  background: #fff;
+}
+.proof-row__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 /* 縦並びの追加証拠（ポスト→売上） */
 .proof-stack {
