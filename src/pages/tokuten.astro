@@ -57,6 +57,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="case-block">
       <h3 class="case-block__name">ジェイコブ <span>（経験人数1人・40代激務会社員）</span></h3>
       <p>5ヶ月で経験人数<strong>57人</strong>・裏垢収益<strong>100万円</strong>達成。<br />活動休止期間もあってこの結果。</p>
+
+      <div class="before-after">
+        <div class="before-after__item">
+          <span class="before-after__label before-after__label--before">BEFORE</span>
+          <img src="/images/tokuten/jacob-before.jpg" alt="ジェイコブ・裏垢を始める前" />
+        </div>
+        <div class="before-after__arrow">▶</div>
+        <div class="before-after__item">
+          <span class="before-after__label before-after__label--after">AFTER</span>
+          <img src="/images/tokuten/jacob-after.jpg" alt="ジェイコブ・5ヶ月後" />
+        </div>
+      </div>
     </div>
 
     <div class="case-block">
@@ -685,6 +697,50 @@ body { background: #fff !important; color: #1a1a1a !important; }
 }
 .case-block p { margin: 0; font-size: .92rem; color: #2a2a2a; line-height: 1.8; }
 .case-block p strong { color: #1a1a1a; }
+
+/* Before / After 比較画像 */
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 4px;
+}
+.before-after__item {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+.before-after__item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+.before-after__label {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-size: .65rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: #fff;
+  z-index: 2;
+}
+.before-after__label--before { background: #555; }
+.before-after__label--after { background: #c41e1e; }
+.before-after__arrow {
+  font-size: 1.4rem;
+  color: #a8821e;
+  font-weight: 900;
+}
+@media (max-width: 480px) {
+  .before-after__arrow { font-size: 1.1rem; }
+  .before-after__label { font-size: .55rem; padding: 2px 6px; }
+}
 
 /* 4つの壁ブロック */
 .wall-block {
