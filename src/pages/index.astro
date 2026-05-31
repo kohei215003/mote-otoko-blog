@@ -112,10 +112,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <figure><img src="/images/index/image105.jpg" alt="" loading="lazy" /></figure>
   <figure><img src="/images/index/image102.jpg" alt="" loading="lazy" /></figure>
   <div class="story__blank"></div>
-  <p><strong>借金500万・童貞・いじめられっ子の桐島が</strong><br /><strong>男が女も金も自由も手に入れた</strong></p>
-  <p><strong>人生を激変させた方法とは↓</strong></p>
-  <div class="story__blank"></div>
-  <p><strong>この話は20年以上セックスと無縁で</strong><br /><strong>彼女もおらず、自信もなく、</strong><br /><br /><strong>人生に諦めかけていた男が</strong><br /><strong>日本トップのモテ男になるまでの実話だ。</strong></p>
+  <div class="story-intro">
+    <div class="story-intro__label">── STORY ──</div>
+    <p class="story-intro__lead"><strong>借金500万・童貞・いじめられっ子の桐島が</strong><br /><strong>女も金も自由も手に入れた</strong><br /><strong>人生を激変させた方法とは↓</strong></p>
+    <div class="story-intro__divider"></div>
+    <p class="story-intro__body">この話は<strong>20年以上セックスと無縁で<br />彼女もおらず、自信もなく、<br />人生に諦めかけていた男が<br />日本トップのモテ男になるまでの実話</strong>だ。</p>
+  </div>
   <div class="story__blank"></div>
   <p><br />俺はど田舎で生まれ育った。</p>
   <figure><img src="/images/index/image28.png" alt="" loading="lazy" /></figure>
@@ -1472,6 +1474,53 @@ body { background: #fff !important; color: #1a1a1a !important; }
   box-shadow: 0 2px 12px rgba(0,0,0,.08);
 }
 .story figure + figure { margin-top: 8px; }
+/* 物語の始まり */
+.story-intro {
+  margin: 40px 0;
+  padding: 40px 28px;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 28px rgba(0,0,0,.15);
+}
+.story-intro__label {
+  font-family: var(--serif);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .3em;
+  color: #d4a83a;
+  margin-bottom: 24px;
+}
+.story-intro__lead {
+  margin: 0 0 24px !important;
+  font-family: var(--serif);
+  font-size: clamp(1rem, 3.2vw, 1.2rem) !important;
+  line-height: 1.9 !important;
+  color: #fff !important;
+}
+.story-intro__lead strong { color: #d4a83a !important; font-weight: 700 !important; }
+.story-intro__divider {
+  width: 60px;
+  height: 1px;
+  background: #d4a83a;
+  margin: 0 auto 24px;
+}
+.story-intro__body {
+  margin: 0 !important;
+  font-size: clamp(.92rem, 2.8vw, 1.05rem) !important;
+  line-height: 2 !important;
+  color: #fff !important;
+}
+.story-intro__body strong { color: #fff !important; font-weight: 700 !important; }
+@media (max-width: 480px) {
+  .story-intro { padding: 32px 20px; margin: 32px 0; }
+  .story-intro__label { font-size: .74rem; margin-bottom: 18px; letter-spacing: .25em; }
+  .story-intro__lead { margin: 0 0 18px !important; }
+  .story-intro__divider { margin: 0 auto 18px; }
+}
+
 /* 空段落（Google Docsの空Enter） = 1行分の余白 */
 .story__blank {
   height: 1.6em;
