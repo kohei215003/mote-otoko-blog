@@ -112,10 +112,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <figure><img src="/images/index/image105.jpg" alt="" loading="lazy" /></figure>
   <figure><img src="/images/index/image102.jpg" alt="" loading="lazy" /></figure>
   <div class="story__blank"></div>
-  <p><strong>借金500万・童貞・いじめられっ子の桐島が</strong><br /><strong>男が女も金も自由も手に入れた</strong></p>
-  <p><strong>人生を激変させた方法とは↓</strong></p>
-  <div class="story__blank"></div>
-  <p><strong>この話は20年以上セックスと無縁で</strong><br /><strong>彼女もおらず、自信もなく、</strong><br /><br /><strong>人生に諦めかけていた男が</strong><br /><strong>日本トップのモテ男になるまでの実話だ。</strong></p>
+  <div class="story-intro">
+    <p><strong>借金500万・童貞・いじめられっ子の桐島が</strong><br /><strong>男が女も金も自由も手に入れた</strong></p>
+    <p><strong>人生を激変させた方法とは↓</strong></p>
+    <p><strong>この話は20年以上セックスと無縁で</strong><br /><strong>彼女もおらず、自信もなく、</strong><br /><br /><strong>人生に諦めかけていた男が</strong><br /><strong>日本トップのモテ男になるまでの実話だ。</strong></p>
+  </div>
   <div class="story__blank"></div>
   <p><br />俺はど田舎で生まれ育った。</p>
   <figure><img src="/images/index/image28.png" alt="" loading="lazy" /></figure>
@@ -1472,6 +1473,29 @@ body { background: #fff !important; color: #1a1a1a !important; }
   box-shadow: 0 2px 12px rgba(0,0,0,.08);
 }
 .story figure + figure { margin-top: 8px; }
+/* 物語の始まり（H2と同じトーン） */
+.story-intro {
+  margin: 36px 0;
+  padding: 24px 24px 24px 22px;
+  border-left: 4px solid #c41e1e;
+  background: #faf6ee;
+  font-family: var(--serif);
+}
+.story-intro p {
+  margin: 0 0 14px !important;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 3.4vw, 1.3rem) !important;
+  line-height: 1.85 !important;
+  color: #1a1a1a !important;
+  font-weight: 700;
+}
+.story-intro p:last-child { margin-bottom: 0 !important; }
+.story-intro p strong { color: #1a1a1a !important; font-weight: 900 !important; }
+@media (max-width: 480px) {
+  .story-intro { padding: 20px 18px 20px 16px; margin: 28px 0; }
+  .story-intro p { margin: 0 0 12px !important; }
+}
+
 /* 空段落（Google Docsの空Enter） = 1行分の余白 */
 .story__blank {
   height: 1.6em;
