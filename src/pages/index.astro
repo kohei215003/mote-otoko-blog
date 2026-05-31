@@ -12,6 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </h1>
   </header>
   <div class="story__blank"></div>
+  <div class="story-intro-center">
   <p><strong>たった数年前まで金なし非モテだった桐島が、</strong></p>
   <p><strong>月に30人の美女を抱けるようになり、</strong></p>
   <p><strong>毎日自動でセックスが舞い降り、</strong></p>
@@ -36,7 +37,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="story__blank"></div>
   <div class="story__blank"></div>
   <div class="story__blank"></div>
-  <p><strong>　　　　　　　　　</strong><strong>男には6つのLevelが存在する。</strong></p>
+  <p><strong>男には6つのLevelが存在する。</strong></p>
+  </div>
   <div class="story__blank"></div>
   <figure><img src="/images/index/image57.jpg" alt="" loading="lazy" /></figure>
   <div class="story__blank"></div>
@@ -1468,31 +1470,36 @@ body { background: #fff !important; color: #1a1a1a !important; }
   display: block;
   letter-spacing: .04em;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 .hero__title-line--past {
-  font-size: clamp(.78rem, 3.55vw, 1.55rem);
+  font-size: clamp(.68rem, 3.15vw, 1.4rem);
   color: rgba(255,255,255,.92);
   font-weight: 900;
   line-height: 1.4;
-  letter-spacing: .02em;
+  letter-spacing: 0;
 }
 .hero__title-line--now {
-  font-size: clamp(1.4rem, 6.3vw, 2.6rem);
+  font-size: clamp(1.2rem, 5.7vw, 2.4rem);
   background: linear-gradient(135deg, #f5d06a 0%, #fff 40%, #d4a83a 70%, #f5d06a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.4;
-  letter-spacing: .04em;
+  letter-spacing: .02em;
   text-shadow: 0 0 40px rgba(245,208,106,.25);
 }
 .hero__title-line--brand {
-  font-size: clamp(1.15rem, 5vw, 2.1rem);
+  font-size: clamp(1rem, 4.5vw, 1.95rem);
   color: #fff;
   font-weight: 900;
-  letter-spacing: .06em;
+  letter-spacing: .04em;
   line-height: 1.4;
   margin-top: 4px;
+}
+@media (max-width: 380px) {
+  .hero { padding: 22px 10px 20px !important; }
 }
 @media (max-width: 480px) {
   .hero { margin: -28px -16px 24px; padding: 22px 18px 20px; }
@@ -1542,6 +1549,14 @@ body { background: #fff !important; color: #1a1a1a !important; }
   box-shadow: 0 2px 12px rgba(0,0,0,.08);
 }
 .story figure + figure { margin-top: 8px; }
+/* 冒頭の中央揃いブロック */
+.story-intro-center {
+  text-align: center;
+}
+.story-intro-center p {
+  text-align: center;
+}
+
 /* 物語の始まり（H2と同じトーン） */
 .story-intro {
   margin: 36px 0;
