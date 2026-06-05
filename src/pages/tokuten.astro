@@ -126,17 +126,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <figure class="slide"><img src="/images/tokuten-slides/slide-120.jpg" alt="Page 120" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-121.jpg" alt="Page 121" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-122.jpg" alt="Page 122" loading="lazy" /></figure>
-  <a href="https://lin.ee/Q5Jx0hv" target="_blank" rel="noopener" class="slide slide--tappable" aria-label="裏垢攻略 個別ロードマップ相談会に申し込む">
+  <figure class="slide slide--has-link">
     <img src="/images/tokuten-slides/slide-123.jpg" alt="Page 123" loading="lazy" />
-  </a>
+    <a class="slide__hot slide__hot--123" href="https://lin.ee/Q5Jx0hv" target="_blank" rel="noopener" aria-label="裏垢攻略 個別ロードマップ相談会に申し込む"></a>
+  </figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-124.jpg" alt="Page 124" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-125.jpg" alt="Page 125" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-126.jpg" alt="Page 126" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-127.jpg" alt="Page 127" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-128.jpg" alt="Page 128" loading="lazy" /></figure>
-  <a href="https://lin.ee/Q5Jx0hv" target="_blank" rel="noopener" class="slide slide--tappable" aria-label="裏垢攻略 個別ロードマップ作成会に申し込む">
+  <figure class="slide slide--has-link">
     <img src="/images/tokuten-slides/slide-129.jpg" alt="Page 129" loading="lazy" />
-  </a>
+    <a class="slide__hot slide__hot--129" href="https://lin.ee/Q5Jx0hv" target="_blank" rel="noopener" aria-label="裏垢攻略 個別ロードマップ作成会に申し込む"></a>
+  </figure>
 </div>
 
 </BaseLayout>
@@ -167,17 +169,44 @@ body { background: #2a2a2a !important; }
   height: auto;
 }
 
-/* タップ可能スライド */
-.slide--tappable {
+/* リンク付きスライド（画像内のボタン部分だけクリッカブル） */
+.slide--has-link {
   position: relative;
-  display: block;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease;
 }
-.slide--tappable:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(0,0,0,.5);
+.slide__hot {
+  position: absolute;
+  display: block;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  background: transparent;
+  box-shadow: 0 0 0 0 rgba(212,168,58,0);
+}
+.slide__hot:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(212,168,58,.45), 0 0 0 2px #d4a83a;
+  background: rgba(212,168,58,.08);
+}
+.slide__hot:active {
+  transform: translateY(0) scale(.98);
+  box-shadow: 0 4px 12px rgba(212,168,58,.4), 0 0 0 2px #d4a83a;
+  background: rgba(212,168,58,.15);
+}
+
+/* スライド123：下部の購入ボタン画像エリア */
+.slide__hot--123 {
+  top: 56%;
+  left: 6%;
+  right: 6%;
+  bottom: 9%;
+}
+
+/* スライド129：上部のボタン画像エリア */
+.slide__hot--129 {
+  top: 3%;
+  left: 5%;
+  right: 5%;
+  bottom: 27%;
 }
 @media (max-width: 480px) {
   .slides-wrap { padding: 10px 8px 40px; gap: 10px; }
