@@ -126,13 +126,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <figure class="slide"><img src="/images/tokuten-slides/slide-120.jpg" alt="Page 120" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-121.jpg" alt="Page 121" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-122.jpg" alt="Page 122" loading="lazy" /></figure>
-  <figure class="slide"><img src="/images/tokuten-slides/slide-123.jpg" alt="Page 123" loading="lazy" /></figure>
+  <a href="https://lin.ee/Q5Jx0hv" target="_blank" rel="noopener" class="slide slide--tappable" aria-label="裏垢攻略 個別ロードマップ相談会に申し込む">
+    <img src="/images/tokuten-slides/slide-123.jpg" alt="Page 123" loading="lazy" />
+    <span class="slide__tap-hint">タップしてLINE登録 →</span>
+  </a>
   <figure class="slide"><img src="/images/tokuten-slides/slide-124.jpg" alt="Page 124" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-125.jpg" alt="Page 125" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-126.jpg" alt="Page 126" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-127.jpg" alt="Page 127" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-128.jpg" alt="Page 128" loading="lazy" /></figure>
-  <figure class="slide"><img src="/images/tokuten-slides/slide-129.jpg" alt="Page 129" loading="lazy" /></figure>
+  <a href="https://lin.ee/Q5Jx0hv" target="_blank" rel="noopener" class="slide slide--tappable" aria-label="裏垢攻略 個別ロードマップ作成会に申し込む">
+    <img src="/images/tokuten-slides/slide-129.jpg" alt="Page 129" loading="lazy" />
+    <span class="slide__tap-hint">タップしてLINE登録 →</span>
+  </a>
 </div>
 
 </BaseLayout>
@@ -161,6 +167,49 @@ body { background: #2a2a2a !important; }
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* タップ可能スライド */
+.slide--tappable {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+  animation: tappable-pulse 1.6s ease-in-out infinite;
+}
+.slide--tappable::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 3px #06c755;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.slide--tappable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(6,199,85,.45);
+}
+.slide__tap-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #06c755;
+  color: #fff;
+  font-weight: 900;
+  font-size: clamp(.85rem, 2.6vw, 1rem);
+  letter-spacing: .06em;
+  padding: 10px 22px;
+  border-radius: 100px;
+  box-shadow: 0 6px 16px rgba(6,199,85,.55);
+  white-space: nowrap;
+  z-index: 2;
+}
+@keyframes tappable-pulse {
+  0%, 100% { box-shadow: 0 6px 20px rgba(0,0,0,.35), 0 0 0 0 rgba(6,199,85,.45); }
+  50% { box-shadow: 0 6px 20px rgba(0,0,0,.35), 0 0 0 10px rgba(6,199,85,0); }
 }
 @media (max-width: 480px) {
   .slides-wrap { padding: 10px 8px 40px; gap: 10px; }
