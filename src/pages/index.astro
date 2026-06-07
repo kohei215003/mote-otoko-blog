@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="桐島式 人生逆転ロードマップ" description="借金500万・童貞・いじめられっ子だった桐島が女も金も自由も手に入れた全記録。" hideNav={true} hideHeader={true}>
 
-<figure class="hero-fullbleed"><img src="/images/main-slides/slide-001.jpg" alt="Page 1" /></figure>
 <div class="slides-wrap">
+  <figure class="slide"><img src="/images/main-slides/slide-001.jpg" alt="Page 1" /></figure>
   <figure class="slide"><img src="/images/main-slides/slide-002.jpg" alt="Page 2" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/main-slides/slide-003.jpg" alt="Page 3" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/main-slides/slide-004.jpg" alt="Page 4" loading="lazy" /></figure>
@@ -298,18 +298,6 @@ body { background: #2a2a2a !important; }
   box-shadow: 0 6px 20px rgba(0,0,0,.35);
 }
 .slide img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-/* ヒーロー：本当に画面いっぱい */
-.hero-fullbleed {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: transparent;
-}
-.hero-fullbleed img {
   display: block;
   width: 100%;
   height: auto;
