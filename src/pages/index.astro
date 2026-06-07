@@ -4,8 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="桐島式 人生逆転ロードマップ" description="借金500万・童貞・いじめられっ子だった桐島が女も金も自由も手に入れた全記録。" hideNav={true} hideHeader={true}>
 
 <div class="slides-wrap">
-  <figure class="slide slide--hero"><img src="/images/main-slides/slide-001-title.jpg" alt="タイトル" /></figure>
-  <figure class="slide"><img src="/images/main-slides/slide-001-rest.jpg" alt="Page 1" loading="lazy" /></figure>
+  <figure class="slide slide--hero"><img src="/images/main-slides/slide-001.jpg" alt="Page 1" /></figure>
   <figure class="slide"><img src="/images/main-slides/slide-002.jpg" alt="Page 2" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/main-slides/slide-003.jpg" alt="Page 3" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/main-slides/slide-004.jpg" alt="Page 4" loading="lazy" /></figure>
@@ -306,19 +305,19 @@ body { background: #2a2a2a !important; }
 /* タイトルスライド：画面端まで届くフルブリード */
 .slide--hero {
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
   margin-top: -16px;
-  width: 100vw;
-  max-width: 100vw;
   border-radius: 0;
   box-shadow: none;
+  background: transparent;
 }
 .slide--hero img {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  display: block;
 }
 @media (max-width: 480px) {
   .slide--hero {
