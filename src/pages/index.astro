@@ -275,12 +275,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <figure class="slide"><img src="/images/main-slides/slide-269.jpg" alt="Page 269" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/main-slides/slide-270.jpg" alt="Page 270" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/main-slides/slide-271.jpg" alt="Page 271" loading="lazy" /></figure>
-  <figure class="slide"><img src="/images/main-slides/slide-272a.jpg" alt="Page 272 (上)" loading="lazy" /></figure>
-  <a href="https://lin.ee/WCorfr2" target="_blank" rel="noopener" class="line-btn">
-    <svg width="26" height="26" viewBox="0 0 48 48" fill="currentColor"><path d="M24 4C12.95 4 4 12.4 4 22.8c0 9.3 7.4 17.1 17.4 18.6l1.5.3v6.8l6.2-3.4c1-.5 2.1-.8 3.2-.9H33c10.6 0 15-6.8 15-13.4C48 12.4 35.05 4 24 4z"/></svg>
-    公式LINEで感想を送って特典を受け取る
-  </a>
-  <figure class="slide"><img src="/images/main-slides/slide-272b.jpg" alt="Page 272 (下)" loading="lazy" /></figure>
+  <figure class="slide slide--with-overlay">
+    <img src="/images/main-slides/slide-272.jpg" alt="Page 272" loading="lazy" />
+    <a href="https://lin.ee/WCorfr2" target="_blank" rel="noopener" class="line-btn line-btn--overlay">
+      <svg width="22" height="22" viewBox="0 0 48 48" fill="currentColor"><path d="M24 4C12.95 4 4 12.4 4 22.8c0 9.3 7.4 17.1 17.4 18.6l1.5.3v6.8l6.2-3.4c1-.5 2.1-.8 3.2-.9H33c10.6 0 15-6.8 15-13.4C48 12.4 35.05 4 24 4z"/></svg>
+      公式LINEで感想を送って特典を受け取る
+    </a>
+  </figure>
   <figure class="slide"><img src="/images/main-slides/slide-273.jpg" alt="Page 273" loading="lazy" /></figure>
 </div>
 
@@ -337,8 +338,29 @@ body { background: #2a2a2a !important; }
   transform: translateY(0);
   opacity: .9;
 }
+
+/* スライド画像内にボタンをオーバーレイ */
+.slide--with-overlay {
+  position: relative;
+}
+.line-btn--overlay {
+  position: absolute;
+  top: 60%;
+  left: 6%;
+  right: 6%;
+  transform: translateY(-50%);
+  font-size: clamp(.85rem, 2.5vw, 1.1rem);
+  padding: 16px 18px;
+  gap: 8px;
+}
+
 @media (max-width: 480px) {
   .slides-wrap { padding: 10px 8px 40px; gap: 10px; }
   .line-btn { font-size: .95rem; padding: 18px 20px; }
+  .line-btn--overlay {
+    padding: 12px 12px;
+    font-size: .82rem;
+    border-radius: 10px;
+  }
 }
 </style>
