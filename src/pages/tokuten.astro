@@ -135,7 +135,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <figure class="slide"><img src="/images/tokuten-slides/slide-126.jpg" alt="Page 126" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-127.jpg" alt="Page 127" loading="lazy" /></figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-128.jpg" alt="Page 128" loading="lazy" /></figure>
-  <figure class="slide"><img src="/images/tokuten-slides/slide-129.jpg" alt="Page 129" loading="lazy" /></figure>
+  <figure class="slide slide--has-link">
+    <img src="/images/tokuten-slides/slide-129.jpg" alt="Page 129" loading="lazy" />
+    <a class="slide__hot slide__hot--129" href="https://lin.ee/Q5Jx0hv" target="_blank" rel="noopener" aria-label="モテ特化個別ロードマップ作成会に申し込む"></a>
+  </figure>
   <figure class="slide"><img src="/images/tokuten-slides/slide-130.jpg" alt="Page 130" loading="lazy" /></figure>
   <figure class="slide slide--has-link">
     <img src="/images/tokuten-slides/slide-131.jpg" alt="Page 131" loading="lazy" />
@@ -201,6 +204,14 @@ body { background: #2a2a2a !important; }
   left: 7%;
   right: 7%;
   bottom: 14%;
+}
+
+/* スライド129：ボタン画像エリア */
+.slide__hot--129 {
+  top: 38%;
+  left: 8%;
+  right: 8%;
+  bottom: 11%;
 }
 
 /* スライド131：最後のボタン画像エリア */
