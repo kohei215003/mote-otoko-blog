@@ -722,12 +722,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 (function() {
   const FIVE_DAYS = 5 * 24 * 60 * 60 * 1000;
   const KEY = 'mote_lp_start_v6';
+  // 2026-07-28 21:00(JST)以降、それ以前に開始した訪問者は次回アクセス時に振り出し（5日間）へリセット
+  const RESET_AT = new Date('2026-07-28T21:00:00+09:00').getTime();
 
-  if (!localStorage.getItem(KEY)) {
-    localStorage.setItem(KEY, Date.now().toString());
+  const now = Date.now();
+  let startTime = parseInt(localStorage.getItem(KEY) || '0');
+  if (!startTime || (now >= RESET_AT && startTime < RESET_AT)) {
+    startTime = now;
+    localStorage.setItem(KEY, startTime.toString());
   }
 
-  const startTime = parseInt(localStorage.getItem(KEY));
   const expireTime = startTime + FIVE_DAYS;
 
   function pad(n) { return String(n).padStart(2, '0'); }
