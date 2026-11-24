@@ -1,0 +1,119 @@
+---
+import noteHtml from '../content/yuri-note.html?raw';
+const title = "【アラサー・経験人数1人・手取り19万】非モテ会社員だった僕が、美女から逆ナンDMがくる裏垢男子側になって人生逆転した話";
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <article class="note">
+      <header class="note__head">
+        <h1 class="note__title">{title}</h1>
+        <div class="note__meta">
+          <span class="note__author">ユーリ</span>
+          <time class="note__date">2026年11月6日 13:32</time>
+        </div>
+      </header>
+      <div class="note__body" set:html={noteHtml}></div>
+    </article>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --note-font: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Arial, "Noto Sans JP", Meiryo, sans-serif;
+    --note-ink: rgb(8, 19, 26);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: var(--note-ink);
+    font-family: var(--note-font);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .note {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 40px 20px 120px;
+  }
+  /* ── ヘッダー ── */
+  .note__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.8px;
+    margin: 30px 0 15px;
+  }
+  .note__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #4c4c4c;
+    margin-bottom: 20px;
+  }
+  .note__author { font-weight: 700; color: var(--note-ink); }
+  .note__date { color: #808080; }
+
+  /* ── 本文（note準拠タイポグラフィ） ── */
+  .note__body {
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--note-ink);
+    letter-spacing: normal;
+  }
+  .note__body h2 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.8px;
+    margin: 45px 0 -15px;
+  }
+  .note__body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.72px;
+    margin: 45px 0 -15px;
+  }
+  .note__body p {
+    font-size: 16px;
+    line-height: 32px;
+    margin: 30px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .note__body a {
+    color: #2cb696;
+    text-decoration: none;
+  }
+  .note__body figure {
+    margin: 30px 0;
+  }
+  .note__body figure img,
+  .note__body img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .note__body figure a { display: block; }
+  .note__body figcaption {
+    font-size: 14px;
+    color: #808080;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+  @media (max-width: 480px) {
+    .note { padding: 24px 16px 80px; }
+  }
+</style>
